@@ -5,8 +5,8 @@ Plugin that allows to define Icons in the CMS (works with djangocms-text-ckedito
 
 
 Styles should be defined like in aldryn-style:
-ALDRYN_STYLE_CLASS_NAMES = (
+```ALDRYN_STYLE_CLASS_NAMES = (
     ('info', _("info")),
     ('new', _("new")),
     ('hint', _("hint")),
-)
+)```
