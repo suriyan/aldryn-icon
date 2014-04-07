@@ -24,7 +24,7 @@ There are pre-defined Icons based on icon files (32x32 pixels) from ``'django-ic
 or you can define custom icons in your settings.py:
 
 ```
-CMS_ICONS_NAMES = (
+CMS_ICON_NAMES = (
     ('icons/info.png', _("info")),
     ('icons/new.png', _("new")),
     ('icons/hint.png', _("hint")),
