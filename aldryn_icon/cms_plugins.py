@@ -21,7 +21,9 @@ class IconPlugin(CMSPluginBase):
         }),
         (_('Optional Settings'), {
             'classes': ('collapse',),
-            'fields': ('url', 'page_link', 'alt', 'float',),
+            'fields': (
+                'tag_type', 'url', 'page_link',
+            ),
         }),
     )
 
@@ -36,11 +38,10 @@ class IconPlugin(CMSPluginBase):
             'object': instance,
             'link': link,
             'placeholder': placeholder,
-            'STATIC_URL': settings.STATIC_URL,
         })
         return context
 
     def icon_src(self, instance):
-        return settings.STATIC_URL + instance.name
+        return settings.STATIC_URL + "aldryn_icon/icons/icon.gif"
 
 plugin_pool.register_plugin(IconPlugin)

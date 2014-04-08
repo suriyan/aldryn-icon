@@ -1,5 +1,6 @@
-<span class="plugin_icon{% if object.float %} align-{{ object.float }}{% endif %}">
+<span class="plugin_icon">
 {% if link %}<a href="{{ link }}">{% endif %}
-<img src="{{ STATIC_URL }}{{ object.name }}" alt="{{ object.alt }}" />
+<{{ object.tag_type }}{% if object.name %} class="{{ object.name }}"{% endif %}>
+</{{ object.tag_type }}>
 {% if link %}</a>{% endif %}
 </span>
