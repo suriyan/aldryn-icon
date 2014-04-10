@@ -1,7 +1,7 @@
 {
 	"name": "Aldryn Icon",
 	"description": "Plugin that allows to define Icons in the CMS",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"url": "https://github.com/aldryn/aldryn-icon",
 	"package-name": "aldryn-icon",
 	"installed-apps": [
