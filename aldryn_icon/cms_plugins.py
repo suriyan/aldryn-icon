@@ -7,27 +7,30 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 
 from .models import Icon
+from .forms import IconPluginForm
 
 
 class IconPlugin(CMSPluginBase):
     model = Icon
     name = _("Icon")
-    render_template = "cms/plugins/icon.html"
+    render_template = False
+    form = IconPluginForm
     text_enabled = True
 
     fieldsets = (
         (None, {
-            'fields': ('name',)
+            'fields': ('style', 'name',)
         }),
         (_('Optional Settings'), {
             'classes': ('collapse',),
             'fields': (
-                'tag_type', 'url', 'page_link',
+                'url', 'page_link',
             ),
         }),
     )
 
     def render(self, context, instance, placeholder):
+        self.render_template = 'aldryn_icon/plugins/%s/icon.html' % instance.style
         if instance.url:
             link = instance.url
         elif instance.page_link:
